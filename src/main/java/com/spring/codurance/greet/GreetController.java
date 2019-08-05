@@ -6,8 +6,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetController {
 
+    private final TimeService timeService;
+
+    public GreetController(TimeService timeService) {
+        this.timeService = timeService;
+    }
+
     @GetMapping("/greet")
     public Greet greet(String name) {
-        return new Greet(name);
+        return new Greet(timeService.getTime(), name);
     }
 }
