@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+        java: openjdk8
+  build:
+    commands:
+    - ./gradlew build
+  post_build:
+    commands:
+      - eval `aws ecr get-login --no-include-email --region us-east-2`
+      - docker build -t springboot-repository .
+      - docker tag springboot-repository:latest 300563897675.dkr.ecr.us-east-2.amazonaws.com/springboot-repository:latest
+      - docker push 300563897675.dkr.ecr.us-east-2.amazonaws.com/springboot-repository:latest
