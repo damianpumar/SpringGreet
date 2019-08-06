@@ -41,6 +41,6 @@ public class GreetFeature {
 
 		mockMvc.perform(get("/greet"))
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.salutation", is("Hello Strangers, good afternoon!")));
+				.andExpect(jsonPath("$.salutation", is("Hello Stranger, good afternoon!")));
 	}
 }

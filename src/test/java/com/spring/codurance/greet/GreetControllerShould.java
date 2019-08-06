@@ -35,21 +35,21 @@ public class GreetControllerShould {
     public void greet_stranger() {
         Greet greet = controller.greet(null);
 
-        assertThat(greet.salutation()).isEqualTo("Hello Strangers, good morning!");
+        assertThat(greet.salutation()).isEqualTo("Hello Stranger, good morning!");
     }
 
     @Test
     public void greet_stranger_when_name_is_blank() {
         Greet greet = controller.greet("");
 
-        assertThat(greet.salutation()).isEqualTo("Hello Strangers, good morning!");
+        assertThat(greet.salutation()).isEqualTo("Hello Stranger, good morning!");
     }
 
     @Test
     public void greet_stranger_when_name_only_has_spaces() {
         Greet greet = controller.greet("    ");
 
-        assertThat(greet.salutation()).isEqualTo("Hello Strangers, good morning!");
+        assertThat(greet.salutation()).isEqualTo("Hello Stranger, good morning!");
     }
     
     @Test 
