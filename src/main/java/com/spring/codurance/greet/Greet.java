@@ -3,7 +3,7 @@ package com.spring.codurance.greet;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Greet {
-    private final String STRANGER = "Stranger";
+    private final String STRANGER = "Strangers";
     private final String SALUTATIONS_MESSAGE = "Hello %s, good %s!";
     private final String AFTERNOON = "afternoon";
     private final String MORNING = "morning";
